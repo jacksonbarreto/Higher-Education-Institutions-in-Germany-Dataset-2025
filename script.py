@@ -72,8 +72,6 @@ dfNuts3_2016.rename(columns={
 }, inplace=True)
 
 # Merge df with NUTS2 and NUTS3 for 2016
-# dfMerged = pd.merge(df, dfNuts2_2016, on='NUTS2', how='left')
-# dfMerged = pd.merge(dfMerged, dfNuts3_2016, on='NUTS3', how='left')
 df = pd.merge(df, dfNuts2_2016, on='NUTS2', how='left')
 df = pd.merge(df, dfNuts3_2016, on='NUTS3', how='left')
 
@@ -95,8 +93,6 @@ dfNuts3_2021.rename(columns={
 }, inplace=True)
 
 # Merge df with NUTS2 and NUTS3 for 2021
-# dfMerged = pd.merge(dfMerged, dfNuts2_2021, on='NUTS2', how='left')
-# dfMerged = pd.merge(dfMerged, dfNuts3_2021, on='NUTS3', how='left')
 df = pd.merge(df, dfNuts2_2021, on='NUTS2', how='left')
 df = pd.merge(df, dfNuts3_2021, on='NUTS3', how='left')
 
@@ -107,14 +103,12 @@ nuts_columns = [
 ]
 
 # Find columns that already exist in the DataFrame
-existing_nuts_columns = [col for col in nuts_columns if col in dfMerged.columns]
+existing_nuts_columns = [col for col in nuts_columns if col in df.columns]
 
 # Determine the position where NUTS columns should be inserted (after 'Url')
-# insertion_point = dfMerged.columns.get_loc('Url') + 1
 insertion_point = df.columns.get_loc('Url') + 1
 
 # Get remaining columns without duplicating or changing original order
-# remaining_columns = [col for col in dfMerged.columns if col not in existing_nuts_columns]
 remaining_columns = [col for col in df.columns if col not in existing_nuts_columns]
 
 # Insert NUTS columns in desired position
@@ -125,7 +119,6 @@ new_column_order = (
 )
 
 # Reorganize DataFrame with new column order
-# dfMerged = dfMerged[new_column_order]
 df = df[new_column_order]
 
 # Enrichment
