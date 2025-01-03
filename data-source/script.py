@@ -121,6 +121,32 @@ new_column_order = (
 # Reorganize DataFrame with new column order
 df = df[new_column_order]
 
+# verifiy duplicate url
+
+def check_duplicates_url(df, coluna_url='Url'):    
+    def extract_domain_without_www(url):
+        try:
+            url = re.sub(r'www\.', '', url)
+            domain = url.split('/')[0]
+            return domain
+        except:
+            return None
+
+    df['domain_without_www'] = df[coluna_url].apply(extract_domain_without_www)
+
+    duplicateds = df[df.duplicated(subset=['domain_without_www'], keep=False)].dropna(subset=['domain_without_www'])
+
+    if duplicateds.empty:
+        print("No duplicate URLs were found (after removing 'www').")
+    else:
+        print("Duplicate URLs found (after removing 'www'):")
+        print(duplicateds[[coluna_url, 'domain_without_www','ETER_ID']])
+
+        domains_duplicateds = duplicateds['domain_without_www'].unique()
+        print("\nUnique duplicate domains:\n", domains_duplicateds)
+
+check_duplicates_url(df)
+
 # Enrichment
 
 # Change url of DE0012 Zeppelin Universität Friedrichshafen (Priv. H)
