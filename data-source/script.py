@@ -123,7 +123,7 @@ df = df[new_column_order]
 
 # verifiy duplicate url
 
-def check_duplicates_url(df, coluna_url='Url'):    
+def check_duplicates_url(df, coluna_url='Url'):
     def extract_domain_without_www(url):
         try:
             url = re.sub(r'www\.', '', url)
@@ -173,8 +173,11 @@ df.loc[df['ETER_ID'] == 'DE0395', 'Url'] = 'hr-nord.niedersachsen.de'
 # Because the url war wrong
 df.loc[df['ETER_ID'] == 'DE0431', 'Url'] = 'www.srh-university.de'
 
+# Sanatize
+
 # Check later - 503 error and invalid https
-# http://www.vwa-hochschule.de/
+# Remove DE0457 VWA-Hochschule für berufsbegleitendes Studium Stuttgart (Priv.FH) because of 503 Service Temporarily Unavailable
+df.loc[df['ETER_ID'] == 'DE0457', 'Url'] = 'http://www.vwa-hochschule.de/'
 
 # saving data on CSV file
 file_name = 'germany-heis.csv'
