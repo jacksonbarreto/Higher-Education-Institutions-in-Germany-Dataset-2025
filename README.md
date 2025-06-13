@@ -1,4 +1,4 @@
-# Higher Education Institutions in Germay Dataset
+# Higher Education Institutions in Germany Dataset
 
 This repository contains a dataset of higher education institutions in Germany. This includes 400 higher education institutions in Germany, including universities,  universities of applied sciences and Higher Institutes as Higher Institute of Engineering, Higher Institute of biotechnologies and few others. This dataset was compiled in response to a cybersecurity investigation of Germany higher education institutions' websites [1]. The data is being made publicly available to promote open science principles [2].
 
@@ -22,7 +22,7 @@ The data includes the following fields for each institution:
 ## Methodology
 The methodology for creating the dataset involved obtaining data from two sources: The European Higher Education Sector Observatory (ETER)[3]. The data was collected on December 26, 2024, the Eurostat for NUTS - Nomenclature of territorial units for statistics 2013-16[4] and 2021[5].
 
-This section outlines the methodology used to create the dataset for Higher Education Institutions (HEIs) in France. The dataset consolidates information from various sources, processes the data, and enriches it to provide accurate and reliable insights.
+This section outlines the methodology used to create the dataset for Higher Education Institutions (HEIs) in Germany. The dataset consolidates information from various sources, processes the data, and enriches it to provide accurate and reliable insights.
 
 **Data Sources**
 1. **ETER Database**: The primary dataset was sourced from the ETER database, containing detailed information about HEIs in Europe.
@@ -46,17 +46,17 @@ Columns in the raw dataset were renamed for consistency and readability. Example
 **Handling Missing or Incorrect Data**
 1. Specific entries with missing or incorrect data were updated manually based on their `ETER_ID`. For instance:
    - Adjusted URLs for entries like `DE0012` (updated to `www.zeppelin-university.com`)
-   - Adjusted URLs for entries like `FR0906` (updated to `hmtm.de`)
-   - Adjusted URLs for entries like `FR0104` (updated to `www.dhfpg.de`)
-   - Adjusted URLs for entries like `FR0466` (updated to `fhf.brandenburg.de`)
-   - Adjusted URLs for entries like `FR0907` (updated to `hr-nord.niedersachsen.de`)
-   - Adjusted URLs for entries like `FR0333` (updated to `www.srh-university.de`)   
+   - Adjusted URLs for entries like `DE0906` (updated to `hmtm.de`)
+   - Adjusted URLs for entries like `DE0104` (updated to `www.dhfpg.de`)
+   - Adjusted URLs for entries like `DE0466` (updated to `fhf.brandenburg.de`)
+   - Adjusted URLs for entries like `DE0907` (updated to `hr-nord.niedersachsen.de`)
+   - Adjusted URLs for entries like `DE0333` (updated to `www.srh-university.de`)   
 
 **Regional Data Integration**
 1. Merged NUTS 2016 and NUTS 2021 data to enrich the dataset with regional labels.
 
 **Final Dataset**
-The final dataset was saved as a CSV file: `germany-heis.csv`, encoded in UTF-8 for compatibility. It includes detailed information about HEIs in France, their categories, regional affiliations, and membership in European alliances.
+The final dataset was saved as a CSV file: `germany-heis.csv`, encoded in UTF-8 for compatibility. It includes detailed information about HEIs in Germany, their categories, regional affiliations, and membership in European alliances.
 
 **Summary**
 This methodology ensures that the dataset is accurate, consistent, and enriched with valuable regional and institutional details. The final dataset is intended to serve as a reliable resource for analyzing French HEIs.
@@ -73,7 +73,7 @@ If you have any updates or corrections to the data, please feel free to open a p
 
 ## Acknowledgment
 
-We would like to acknowledge the support of the Norte Portugal Regional Operational Programme (NORTE 2020), under the PORTUGAL 2020 Partnership Agreement, through the European Regional Development Fund (ERDF), within the project "Cybers SeC IP" (NORTE-01-0145-FEDER-000044). This study was also developed as part of the Master in Cybersecurity Program at the Instituto Politécnico de Viana do Castelo, Portugal.
+This study was also developed as part of the Master in Cybersecurity Program at the Instituto Politécnico de Viana do Castelo, Portugal.
 
 ## References
 
